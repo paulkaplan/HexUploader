@@ -1,0 +1,47 @@
+{
+    "devices": [
+      {
+      "name"      : "Mega",
+      "chip"      : "ATmega 1280",
+      "device"    : "m1280",
+      "programmer": "arduino",
+      "baud"      : "57600"
+      },
+      
+      {
+      "name"      : "Mega",
+      "chip"      : "ATmega 2560",
+      "device"    : "m2560",
+      "programmer": "stk500v2",
+      "baud"      : "115200"
+      },
+      {
+      "name"      : "Duemilanove / Nano",
+      "chip"      : "ATmega 328p",
+      "device"    : "m328p",
+      "programmer": "stk500",
+      "baud"      : "57600"
+      },
+      {
+      "name"      : "Duemilanove / Nano",
+      "chip"      : "ATmega 168",
+      "device"    : "m168",
+      "programmer": "stk500",
+      "baud"      : "57600"
+      },
+      {
+      "name"      : "Mega",
+      "chip"      : "ATmega 1280",
+      "device"    : "m1280",
+      "programmer": "arduino",
+      "baud"      : "57600"
+      },
+      {
+      "name"      : "Uno",
+      "chip"      : "ATmega 328p",
+      "device"    : "m328p",
+      "programmer": "arduino",
+      "baud"      : "115200"
+      }
+    ]
+}
