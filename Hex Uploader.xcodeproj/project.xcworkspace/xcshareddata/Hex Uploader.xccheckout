@@ -10,29 +10,29 @@
 	<string>Hex Uploader</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8413E314-FAF1-40DE-B0B3-BD4857B04BAC</key>
+		<key>6E5D621E71C6A9816F3822B9BD42D58BC025BF90</key>
 		<string>https://github.com/paulkaplan/HexUploader.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Hex Uploader.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8413E314-FAF1-40DE-B0B3-BD4857B04BAC</key>
+		<key>6E5D621E71C6A9816F3822B9BD42D58BC025BF90</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/paulkaplan/HexUploader.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8413E314-FAF1-40DE-B0B3-BD4857B04BAC</string>
+	<string>6E5D621E71C6A9816F3822B9BD42D58BC025BF90</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8413E314-FAF1-40DE-B0B3-BD4857B04BAC</string>
+			<string>6E5D621E71C6A9816F3822B9BD42D58BC025BF90</string>
 			<key>IDESourceControlWCCName</key>
 			<string>HexUploader</string>
 		</dict>

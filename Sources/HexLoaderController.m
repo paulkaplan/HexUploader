@@ -3,16 +3,36 @@
 
 @implementation HexLoaderController
 
+@synthesize sendTextField = _sendTextField;
+@synthesize openCloseButton = _openCloseButton;
+
+@synthesize serialPortManager = _serialPortManager;
+@synthesize serialPort = _serialPort;
+
+@synthesize availableDevices = _availableDevices;
+@synthesize availableBaudRates = _availableBaudRates;
+
 - (id)init
 {
     self = [super init];
     if (self)
 	{
         self.serialPortManager = [ORSSerialPortManager sharedSerialPortManager];
-		self.availableBaudRates = [NSArray arrayWithObjects: [NSNumber numberWithInteger:300], [NSNumber numberWithInteger:1200], [NSNumber numberWithInteger:2400], [NSNumber numberWithInteger:4800], [NSNumber numberWithInteger:9600], [NSNumber numberWithInteger:14400], [NSNumber numberWithInteger:19200], [NSNumber numberWithInteger:28800], [NSNumber numberWithInteger:38400], [NSNumber numberWithInteger:57600], [NSNumber numberWithInteger:115200], [NSNumber numberWithInteger:230400],
-								   nil];
-        
-    // Initialize devices from JSON manifest
+		self.availableBaudRates = [NSArray arrayWithObjects:
+                                    [NSNumber numberWithInteger:300],
+                                    [NSNumber numberWithInteger:1200],
+                                    [NSNumber numberWithInteger:2400],
+                                    [NSNumber numberWithInteger:4800],
+                                    [NSNumber numberWithInteger:9600],
+                                    [NSNumber numberWithInteger:14400],
+                                    [NSNumber numberWithInteger:19200],
+                                    [NSNumber numberWithInteger:28800],
+                                    [NSNumber numberWithInteger:38400],
+                                    [NSNumber numberWithInteger:57600],
+                                    [NSNumber numberWithInteger:115200],
+                                   nil];
+
+        // Initialize devices from JSON manifest
 		NSString *filePath = [[NSBundle mainBundle] pathForResource:@"devices" ofType:@"json"];
         NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:NULL];
@@ -29,7 +49,7 @@
 		[nc addObserver:self selector:@selector(serialPortsWereConnected:) name:ORSSerialPortsWereConnectedNotification object:nil];
 		[nc addObserver:self selector:@selector(serialPortsWereDisconnected:) name:ORSSerialPortsWereDisconnectedNotification object:nil];
         
-    // Make sure arduino.app is installed
+        // Make sure arduino.app is installed
         NSFileManager *localFileManager = [[NSFileManager alloc] init];
         BOOL arduinoAppExists;
         [localFileManager fileExistsAtPath:@"/Applications/Arduino.app" isDirectory:&arduinoAppExists];
@@ -75,11 +95,6 @@
 	NSLog(@"Serial port %@ encountered an error: %@", serialPort, error);
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-	NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, object, keyPath);
-	NSLog(@"Change dictionary: %@", change);
-}
 
 #pragma mark - NSUserNotificationCenterDelegate
 
@@ -105,14 +120,12 @@
 - (void)serialPortsWereConnected:(NSNotification *)notification
 {
 	NSArray *connectedPorts = [[notification userInfo] objectForKey:ORSConnectedSerialPortsKey];
-	NSLog(@"Ports were connected: %@", connectedPorts);
 	[self postUserNotificationForConnectedPorts:connectedPorts];
 }
 
 - (void)serialPortsWereDisconnected:(NSNotification *)notification
 {
 	NSArray *disconnectedPorts = [[notification userInfo] objectForKey:ORSDisconnectedSerialPortsKey];
-	NSLog(@"Ports were disconnected: %@", disconnectedPorts);
 	[self postUserNotificationForDisconnectedPorts:disconnectedPorts];
 	
 }
@@ -159,7 +172,6 @@
      
      self.receivedDataTextView.font = [NSFont fontWithName:@"Monaco" size:10];
      
-     
      NSOpenPanel* openDlg = [NSOpenPanel openPanel];
      
      // Enable the selection of files in the dialog.
@@ -204,30 +216,20 @@
          [task setCurrentDirectoryPath:@"/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/etc"];
         
          NSArray *args = [NSArray arrayWithObjects:
-                          @"-F",
-                          @"-Cavrdude.conf",
-                          [NSString stringWithFormat:@"-p%@",self.device.device_type],
-                          [NSString stringWithFormat:@"-c%@",self.device.programmer],
-                          [NSString stringWithFormat:@"-P%@",self.serialPort.path],
-                          @"-D",
-                          [NSString stringWithFormat:@"%@%@", @"-Uflash:w:", fileName],
+                            @"-F",
+                            @"-Cavrdude.conf",
+                            [NSString stringWithFormat:@"-p%@",self.device.device_type],
+                            [NSString stringWithFormat:@"-c%@",self.device.programmer],
+                            [NSString stringWithFormat:@"-P%@",self.serialPort.path],
+                            @"-D",
+                            [NSString stringWithFormat:@"%@%@", @"-Uflash:w:", fileName],
                           nil];
          
          [task setArguments:args];
-//         NSLog(@"%@", args);
          [task launch];
-         
      }
-     
- }
+}
 
-
-#pragma mark - Properties
-
-@synthesize sendTextField = _sendTextField;
-@synthesize openCloseButton = _openCloseButton;
-
-@synthesize serialPortManager = _serialPortManager;
 - (void)setSerialPortManager:(ORSSerialPortManager *)manager
 {
 	if (manager != _serialPortManager)
@@ -239,22 +241,15 @@
 	}
 }
 
-@synthesize serialPort = _serialPort;
 - (void)setSerialPort:(ORSSerialPort *)port
 {
 	if (port != _serialPort)
 	{
 		[_serialPort close];
 		_serialPort.delegate = nil;
-		
 		_serialPort = port;
-		
 		_serialPort.delegate = self;
 	}
 }
-
-@synthesize availableDevices = _availableDevices;
-
-@synthesize availableBaudRates = _availableBaudRates;
 
 @end

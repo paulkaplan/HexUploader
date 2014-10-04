@@ -49,6 +49,7 @@
     NSLog(@"drag enter");
     return NSDragOperationGeneric;
 }
+
 -(BOOL)prepareForDragOperation:(id < NSDraggingInfo >)sender
 {
     NSLog(@"prepare for drag");
