@@ -11,9 +11,7 @@
 
 @interface HexLoaderController : NSObject <ORSSerialPortDelegate, NSUserNotificationCenterDelegate>
 
-- (IBAction)send:(id)sender;
 - (IBAction)openOrClosePort:(id)sender;
-- (IBAction)startUpload:(id)sender;
 
 @property (unsafe_unretained) IBOutlet NSTextField *sendTextField;
 @property (unsafe_unretained) IBOutlet NSTextView *receivedDataTextView;

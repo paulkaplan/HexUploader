@@ -17,6 +17,5 @@
 @property (nonatomic, strong) NSString *baud;
 
 -(id)initWithDictionary:(NSDictionary *)dict;
--(void)dealloc;
 
 @end

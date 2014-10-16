@@ -241,6 +241,10 @@
 	}
 }
 
+- (void)serialPort:(ORSSerialPort *)serialPort didReceiveData:(NSData *)data {
+    NSLog(@"%@", data);
+}
+
 - (void)setSerialPort:(ORSSerialPort *)port
 {
 	if (port != _serialPort)

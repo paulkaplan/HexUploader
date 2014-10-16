@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095CE64519E35FC200016CE5 /* HexUploader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HexUploader.entitlements; sourceTree = "<group>"; };
 		095E2FBB18329C5E0041A9A6 /* ORSSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPort.h; sourceTree = "<group>"; };
 		095E2FBC18329C5E0041A9A6 /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPort.m; sourceTree = "<group>"; };
 		095E2FBD18329C5E0041A9A6 /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPortManager.h; sourceTree = "<group>"; };
@@ -31,15 +32,15 @@
 		09FC6FFB18313A1E00E2FEBA /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		09FC6FFC18313A1E00E2FEBA /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		9D6623B3159BD610004C9E42 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		9D66D80E159BCAB800EE6D09 /* Hex Uploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hex Uploader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D66D80E159BCAB800EE6D09 /* HexUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HexUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D66D812159BCAB800EE6D09 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9D66D815159BCAB800EE6D09 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9D66D816159BCAB800EE6D09 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9D66D817159BCAB800EE6D09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9D66D81A159BCAB800EE6D09 /* Hex Uploader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hex Uploader-Info.plist"; sourceTree = "<group>"; };
+		9D66D81A159BCAB800EE6D09 /* HexUploader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HexUploader-Info.plist"; sourceTree = "<group>"; };
 		9D66D81C159BCAB800EE6D09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9D66D81E159BCAB800EE6D09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9D66D820159BCAB900EE6D09 /* Hex Uploader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hex Uploader-Prefix.pch"; sourceTree = "<group>"; };
+		9D66D820159BCAB900EE6D09 /* HexUploader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HexUploader-Prefix.pch"; sourceTree = "<group>"; };
 		9D66D824159BCAB900EE6D09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9D66D825159BCAB900EE6D09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9D66D828159BCAB900EE6D09 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -65,7 +66,7 @@
 			children = (
 				09FC6FF7182D8A4000E2FEBA /* Images.xcassets */,
 				9D66D827159BCAB900EE6D09 /* MainMenu.xib */,
-				9D66D81A159BCAB800EE6D09 /* Hex Uploader-Info.plist */,
+				9D66D81A159BCAB800EE6D09 /* HexUploader-Info.plist */,
 				9D66D81B159BCAB800EE6D09 /* InfoPlist.strings */,
 				09FC6FF91831323E00E2FEBA /* devices.json */,
 			);
@@ -75,6 +76,7 @@
 		9D66D803159BCAB800EE6D09 = {
 			isa = PBXGroup;
 			children = (
+				095CE64519E35FC200016CE5 /* HexUploader.entitlements */,
 				9D66D818159BCAB800EE6D09 /* Sources */,
 				9D6623AD159BD599004C9E42 /* Resources */,
 				9D66D819159BCAB800EE6D09 /* Supporting Files */,
@@ -87,7 +89,7 @@
 		9D66D80F159BCAB800EE6D09 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D66D80E159BCAB800EE6D09 /* Hex Uploader.app */,
+				9D66D80E159BCAB800EE6D09 /* HexUploader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9D66D81E159BCAB800EE6D09 /* main.m */,
-				9D66D820159BCAB900EE6D09 /* Hex Uploader-Prefix.pch */,
+				9D66D820159BCAB900EE6D09 /* HexUploader-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			path = Sources;
@@ -150,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9D66D80D159BCAB800EE6D09 /* Hex Uploader */ = {
+		9D66D80D159BCAB800EE6D09 /* HexUploader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D66D82C159BCAB900EE6D09 /* Build configuration list for PBXNativeTarget "Hex Uploader" */;
+			buildConfigurationList = 9D66D82C159BCAB900EE6D09 /* Build configuration list for PBXNativeTarget "HexUploader" */;
 			buildPhases = (
 				9D66D80A159BCAB800EE6D09 /* Sources */,
 				9D66D80B159BCAB800EE6D09 /* Frameworks */,
@@ -162,9 +164,9 @@
 			);
 			dependencies = (
 			);
-			name = "Hex Uploader";
+			name = HexUploader;
 			productName = ORSSerialPortDemo;
-			productReference = 9D66D80E159BCAB800EE6D09 /* Hex Uploader.app */;
+			productReference = 9D66D80E159BCAB800EE6D09 /* HexUploader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,10 +176,23 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ORS;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Open Reel Software";
+				TargetAttributes = {
+					9D66D80D159BCAB800EE6D09 = {
+						DevelopmentTeam = 667HMY4AFP;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
-			buildConfigurationList = 9D66D808159BCAB800EE6D09 /* Build configuration list for PBXProject "Hex Uploader" */;
+			buildConfigurationList = 9D66D808159BCAB800EE6D09 /* Build configuration list for PBXProject "HexUploader" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -189,7 +204,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9D66D80D159BCAB800EE6D09 /* Hex Uploader */,
+				9D66D80D159BCAB800EE6D09 /* HexUploader */,
 			);
 		};
 /* End PBXProject section */
@@ -248,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -263,8 +279,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -273,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -282,7 +299,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
@@ -293,12 +310,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = HexUploader.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sources/Hex Uploader-Prefix.pch";
-				INFOPLIST_FILE = "Resources/Hex Uploader-Info.plist";
+				GCC_PREFIX_HEADER = "Sources/HexUploader-Prefix.pch";
+				INFOPLIST_FILE = "Resources/HexUploader-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "Hex Uploader";
+				PRODUCT_NAME = HexUploader;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -308,12 +329,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = HexUploader.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sources/Hex Uploader-Prefix.pch";
-				INFOPLIST_FILE = "Resources/Hex Uploader-Info.plist";
+				GCC_PREFIX_HEADER = "Sources/HexUploader-Prefix.pch";
+				INFOPLIST_FILE = "Resources/HexUploader-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "Hex Uploader";
+				PRODUCT_NAME = HexUploader;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -321,7 +346,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9D66D808159BCAB800EE6D09 /* Build configuration list for PBXProject "Hex Uploader" */ = {
+		9D66D808159BCAB800EE6D09 /* Build configuration list for PBXProject "HexUploader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D66D82A159BCAB900EE6D09 /* Debug */,
@@ -330,7 +355,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D66D82C159BCAB900EE6D09 /* Build configuration list for PBXNativeTarget "Hex Uploader" */ = {
+		9D66D82C159BCAB900EE6D09 /* Build configuration list for PBXNativeTarget "HexUploader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D66D82D159BCAB900EE6D09 /* Debug */,

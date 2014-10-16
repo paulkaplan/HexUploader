@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7F8C7881-7B1A-4DD7-A465-56F13527E326</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HexUploader</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6E5D621E71C6A9816F3822B9BD42D58BC025BF90</key>
+		<string>https://github.com/paulkaplan/HexUploader.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HexUploader.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6E5D621E71C6A9816F3822B9BD42D58BC025BF90</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/paulkaplan/HexUploader.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6E5D621E71C6A9816F3822B9BD42D58BC025BF90</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6E5D621E71C6A9816F3822B9BD42D58BC025BF90</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HexUploader</string>
+		</dict>
+	</array>
+</dict>
+</plist>
