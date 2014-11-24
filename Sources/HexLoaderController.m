@@ -210,7 +210,8 @@
              [self.receivedDataTextView setNeedsDisplay:YES];
              [[outputPipe fileHandleForReading] waitForDataInBackgroundAndNotify];
          }];
-        
+         
+         NSLog(@"");
          
          [task setLaunchPath:@"/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/bin/avrdude"];
          [task setCurrentDirectoryPath:@"/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/etc"];
