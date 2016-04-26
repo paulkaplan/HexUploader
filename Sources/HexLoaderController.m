@@ -213,8 +213,8 @@
          
          NSLog(@"");
          
-         [task setLaunchPath:@"/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/bin/avrdude"];
-         [task setCurrentDirectoryPath:@"/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/etc"];
+         [task setLaunchPath:@"/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avrdude"];
+         [task setCurrentDirectoryPath:@"/Applications/Arduino.app/Contents/Java/hardware/tools/avr/etc"];
         
          NSArray *args = [NSArray arrayWithObjects:
                             @"-F",
