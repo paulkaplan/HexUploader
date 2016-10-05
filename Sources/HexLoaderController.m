@@ -1,6 +1,12 @@
 #import "HexLoaderController.h"
 #import "ORSSerialPortManager.h"
 
+@interface HexLoaderController ()
+
+@property (nonatomic, strong) NSOperationQueue *bgQueue;
+
+@end
+
 @implementation HexLoaderController
 
 @synthesize sendTextField = _sendTextField;
@@ -17,6 +23,10 @@
     self = [super init];
     if (self)
 	{
+        self.bgQueue = [[NSOperationQueue alloc] init];
+        if ([self.bgQueue respondsToSelector:@selector(setQualityOfService:)]) {
+            [self.bgQueue setQualityOfService:NSQualityOfServiceBackground];
+        }
         self.serialPortManager = [ORSSerialPortManager sharedSerialPortManager];
 		self.availableBaudRates = [NSArray arrayWithObjects:
                                     [NSNumber numberWithInteger:300],
@@ -195,20 +205,30 @@
          
          [[outputPipe fileHandleForReading] waitForDataInBackgroundAndNotify];
          
-         [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:[outputPipe fileHandleForReading] queue:nil usingBlock:^(NSNotification *notification){
-
+         [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:[outputPipe fileHandleForReading] queue:self.bgQueue usingBlock:^(NSNotification *notification){
+            
+             
              NSData *output = [[outputPipe fileHandleForReading] availableData];
              NSString *outStr = [[NSString alloc] initWithData:output encoding:NSUTF8StringEncoding];
-             [self.receivedDataTextView.textStorage.mutableString appendString:[NSString stringWithFormat:@"%@", outStr]];
+             if ([outStr isEqualToString:@""]) {
+                 [[outputPipe fileHandleForReading] waitForDataInBackgroundAndNotify];
+                 return ;
+             }
              
-             // Scroll to end of outputText field
-             NSRange range;
-             range = NSMakeRange([self.receivedDataTextView.string length], 0);
-             [self.receivedDataTextView setFont:[NSFont fontWithName:@"Monaco" size:10]];
-
-             [self.receivedDataTextView scrollRangeToVisible:range];
-             [self.receivedDataTextView setNeedsDisplay:YES];
-             [[outputPipe fileHandleForReading] waitForDataInBackgroundAndNotify];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.receivedDataTextView.textStorage.mutableString appendString:[NSString stringWithFormat:@"%@", outStr]];
+                 
+                 // Scroll to end of outputText field
+                 NSRange range;
+                 range = NSMakeRange([self.receivedDataTextView.string length], 0);
+                 [self.receivedDataTextView setFont:[NSFont fontWithName:@"Monaco" size:10]];
+                 
+                 [self.receivedDataTextView scrollRangeToVisible:range];
+                 [self.receivedDataTextView setNeedsDisplay:YES];
+                 [[outputPipe fileHandleForReading] waitForDataInBackgroundAndNotify];
+             });
+             
+             
          }];
          
          NSLog(@"");
@@ -229,17 +249,6 @@
          [task setArguments:args];
          [task launch];
      }
-}
-
-- (void)setSerialPortManager:(ORSSerialPortManager *)manager
-{
-	if (manager != _serialPortManager)
-	{
-		[_serialPortManager removeObserver:self forKeyPath:@"availablePorts"];
-		_serialPortManager = manager;
-		NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
-		[_serialPortManager addObserver:self forKeyPath:@"availablePorts" options:options context:NULL];
-	}
 }
 
 - (void)serialPort:(ORSSerialPort *)serialPort didReceiveData:(NSData *)data {
