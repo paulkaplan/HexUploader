@@ -53,13 +53,14 @@
             [self.availableDevices addObject:new_device];
         }];
         
-        self.device = [self.availableDevices objectAtIndex:5];
+        self.device = [self.availableDevices objectAtIndex:6];
         
 		NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 		[nc addObserver:self selector:@selector(serialPortsWereConnected:) name:ORSSerialPortsWereConnectedNotification object:nil];
 		[nc addObserver:self selector:@selector(serialPortsWereDisconnected:) name:ORSSerialPortsWereDisconnectedNotification object:nil];
         
         // Make sure arduino.app is installed
+        /*
         NSFileManager *localFileManager = [[NSFileManager alloc] init];
         BOOL arduinoAppExists;
         [localFileManager fileExistsAtPath:@"/Applications/Arduino.app" isDirectory:&arduinoAppExists];
@@ -70,6 +71,7 @@
             [alert setInformativeText:@"This application depends on the Arduino IDE. It must be installed to /Applications/Arduino"];
             [alert runModal];
         }
+        */
 
 #if (MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_7)
 		[[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
@@ -232,18 +234,22 @@
          }];
          
          NSLog(@"");
+
+         NSString *execPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"avrdude"];
+         NSString *confPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"avrdude.conf"];
+
+         [task setLaunchPath: execPath];
          
-         [task setLaunchPath:@"/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avrdude"];
-         [task setCurrentDirectoryPath:@"/Applications/Arduino.app/Contents/Java/hardware/tools/avr/etc"];
-        
          NSArray *args = [NSArray arrayWithObjects:
-                            @"-F",
-                            @"-Cavrdude.conf",
-                            [NSString stringWithFormat:@"-p%@",self.device.device_type],
-                            [NSString stringWithFormat:@"-c%@",self.device.programmer],
-                            [NSString stringWithFormat:@"-P%@",self.serialPort.path],
-                            @"-D",
-                            [NSString stringWithFormat:@"%@%@", @"-Uflash:w:", fileName],
+                          @"-F",
+                          [NSString stringWithFormat:@"-C%@",confPath],
+                          //@"-v",
+                          [NSString stringWithFormat:@"-p%@",self.device.device_type],
+                          [NSString stringWithFormat:@"-c%@",self.device.programmer],
+                          [NSString stringWithFormat:@"-P%@",self.serialPort.path],
+                          [NSString stringWithFormat:@"-b%@",self.device.baud],
+                          @"-D",
+                          [NSString stringWithFormat:@"%@%@", @"-Uflash:w:", fileName],
                           nil];
          
          [task setArguments:args];

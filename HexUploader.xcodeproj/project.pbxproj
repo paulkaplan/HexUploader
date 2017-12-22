@@ -12,6 +12,8 @@
 		09FC6FF8182D8A4000E2FEBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09FC6FF7182D8A4000E2FEBA /* Images.xcassets */; };
 		09FC6FFA1831323E00E2FEBA /* devices.json in Resources */ = {isa = PBXBuildFile; fileRef = 09FC6FF91831323E00E2FEBA /* devices.json */; };
 		09FC6FFD18313A1E00E2FEBA /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FC6FFC18313A1E00E2FEBA /* Device.m */; };
+		15B76BD21FED978400155068 /* avrdude.conf in Resources */ = {isa = PBXBuildFile; fileRef = 15B76BD01FED978400155068 /* avrdude.conf */; };
+		15B76BD31FED978400155068 /* avrdude in Resources */ = {isa = PBXBuildFile; fileRef = 15B76BD11FED978400155068 /* avrdude */; };
 		9D6623B4159BD610004C9E42 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6623B3159BD610004C9E42 /* IOKit.framework */; };
 		9D66D813159BCAB800EE6D09 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D66D812159BCAB800EE6D09 /* Cocoa.framework */; };
 		9D66D81D159BCAB800EE6D09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D66D81B159BCAB800EE6D09 /* InfoPlist.strings */; };
@@ -30,6 +32,8 @@
 		09FC6FF91831323E00E2FEBA /* devices.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = devices.json; sourceTree = "<group>"; };
 		09FC6FFB18313A1E00E2FEBA /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		09FC6FFC18313A1E00E2FEBA /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		15B76BD01FED978400155068 /* avrdude.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = avrdude.conf; sourceTree = SOURCE_ROOT; };
+		15B76BD11FED978400155068 /* avrdude */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = avrdude; sourceTree = SOURCE_ROOT; };
 		9D6623B3159BD610004C9E42 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		9D66D80E159BCAB800EE6D09 /* HexUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HexUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D66D812159BCAB800EE6D09 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -63,6 +67,8 @@
 		9D6623AD159BD599004C9E42 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				15B76BD11FED978400155068 /* avrdude */,
+				15B76BD01FED978400155068 /* avrdude.conf */,
 				09FC6FF7182D8A4000E2FEBA /* Images.xcassets */,
 				9D66D827159BCAB900EE6D09 /* MainMenu.xib */,
 				9D66D81A159BCAB800EE6D09 /* HexUploader-Info.plist */,
@@ -178,7 +184,7 @@
 				ORGANIZATIONNAME = "Open Reel Software";
 				TargetAttributes = {
 					9D66D80D159BCAB800EE6D09 = {
-						DevelopmentTeam = 667HMY4AFP;
+						DevelopmentTeam = WT8HSPY669;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -212,7 +218,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B76BD31FED978400155068 /* avrdude in Resources */,
 				09FC6FF8182D8A4000E2FEBA /* Images.xcassets in Resources */,
+				15B76BD21FED978400155068 /* avrdude.conf in Resources */,
 				9D66D81D159BCAB800EE6D09 /* InfoPlist.strings in Resources */,
 				9D66D829159BCAB900EE6D09 /* MainMenu.xib in Resources */,
 				09FC6FFA1831323E00E2FEBA /* devices.json in Resources */,
@@ -311,6 +319,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WT8HSPY669;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/HexUploader-Prefix.pch";
 				INFOPLIST_FILE = "Resources/HexUploader-Info.plist";
@@ -329,6 +338,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WT8HSPY669;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/HexUploader-Prefix.pch";
 				INFOPLIST_FILE = "Resources/HexUploader-Info.plist";
